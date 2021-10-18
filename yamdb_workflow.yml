@@ -60,10 +60,6 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            mkdir home/photon
-            cp docker-compose.yaml home/photon/
-            cp -R nginx/default.conf home/photon/
-            cd home/photon
             sudo docker pull photon21/yamdb_final
             sudo docker-compose stop
             sudo docker-compose rm web
@@ -77,7 +73,6 @@ jobs:
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker-compose up -d
-
 
   send_message:
     runs-on: ubuntu-latest
