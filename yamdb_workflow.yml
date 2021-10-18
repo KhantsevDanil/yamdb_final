@@ -63,6 +63,7 @@ jobs:
             mkdir home/photon
             cp docker-compose.yaml home/photon/
             cp -R nginx/default.conf home/photon/
+            cd home/photon
             sudo docker pull photon21/yamdb_final
             sudo docker-compose stop
             sudo docker-compose rm web
