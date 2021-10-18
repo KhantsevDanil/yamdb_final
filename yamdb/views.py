@@ -52,8 +52,7 @@ class TitleViewSet(viewsets.GenericViewSet, CreateAPIView, DestroyAPIView,
     filterset_class = TitleFilter
 
     def get_object(self):
-        obj = get_object_or_404(Title, pk=self.kwargs.get('pk'))
-        return obj
+        return get_object_or_404(Title, pk=self.kwargs.get('pk'))
 
     def get_serializer_class(self):
         if self.action in ('list', 'retrieve'):
