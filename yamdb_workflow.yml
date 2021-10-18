@@ -60,6 +60,8 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
+            pip install docker-compose
+            sudo apt install docker.io
             sudo docker pull photon21/yamdb_final
             sudo docker-compose stop
             sudo docker-compose rm web
