@@ -1,7 +1,7 @@
 import os
 from datetime import timedelta
-import environ
 
+import environ
 
 env = environ.Env(
     # set casting, default value
